@@ -26,7 +26,7 @@
 11. kubectl get endpoints argocd-server -n argocd
 12. Access ArgoCD UI
    - kubectl port-forward svc/argocd-server -n argocd 8080:443
-13. https://<EC2:PUBLIC-PI>:NodePortIP
+13. https://<EC2:PUBLIC-PI>:8080
 14. Get Admin password
    - kubectl -n argocd get secret argocd-initial-admin-secret \
      -o jsonpath="{.data.password}" | base64 -d
