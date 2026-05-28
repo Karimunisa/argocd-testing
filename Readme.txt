@@ -44,3 +44,7 @@
     kubectl delete ns argocd
     kubectl get pods -n argocd
     kubectl get deployment -n argocd
+
+
+16. Errors:
+    - ErrImagePull(ArgoCD)/ImagePullBackOff(pods CLI) : wrong image name or tag in the deployment yaml file
