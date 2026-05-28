@@ -1,0 +1,23 @@
+# running in the ec2 instance to create application in ArgoCD
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: demo-app
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/Karimunisa/argocd-testing.git
+    targetRevision: HEAD
+    path: .
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true   # auto sync with the yaml file if any file is deleted
+      selfHealf: true   # automatically sync with the yaml file evnthough it is updated by cli
